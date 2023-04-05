@@ -3,9 +3,9 @@ Created on Thu Mar 30 20:39:36 2023.
 
 @author: Vishal Philip
 Following script reads data from the Excel file to create
-visualizations and statistics for greenhouse gas emissions,
+visualizations and summary statistics for greenhouse gas emissions,
 carbon dioxide emissions, methane emissions for various countries over time.
-It  plots lineplot, barplot and heatmap. For heatmap additional indicator
+It also plots lineplot, barplot and heatmap. For heatmap additional indicator
 Nitrous Oxide is also added.
 """
 
@@ -74,7 +74,7 @@ def bar_plot(df):
     df (DataFrame): The data frame containing the emissions data.
     """
     # Plotting bar plot for specific years
-    df = df.loc[['1990', '2000', '2005', '2010',
+    df = df.loc[['1990', '1995', '2000', '2005', '2010',
                 '2015']].plot(kind='bar', figsize=(10, 6),
                               rot=45, fontsize=12)
     df.legend(loc='upper right', bbox_to_anchor=(1.23, 1.0))
@@ -82,7 +82,7 @@ def bar_plot(df):
     plt.xlabel("Years", fontsize=16)
     plt.ylabel("kt of CO2 equivalent", fontsize=16)
     plt.show()
-    return()
+    return
 
 
 def stati1(name, df):
